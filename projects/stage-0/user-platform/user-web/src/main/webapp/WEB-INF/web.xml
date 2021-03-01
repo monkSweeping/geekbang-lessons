@@ -50,6 +50,10 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
+    
+    <listener>
+        <listener-class>org.geektimes.projects.user.web.listener.DBConnectionInitializerListener</listener-class>
+    </listener>
 
     <filter-mapping>
         <filter-name>CharsetEncodingFilter</filter-name>
@@ -85,11 +89,11 @@
         <welcome-file>/index.jsp</welcome-file>
     </welcome-file-list>
 
-<!--    <resource-ref>-->
-<!--        <description>DB Connection</description>-->
-<!--        <res-ref-name>jdbc/UserPlatformDB</res-ref-name>-->
-<!--        <res-type>javax.sql.DataSource</res-type>-->
-<!--        <res-auth>Container</res-auth>-->
-<!--    </resource-ref>-->
-
+    <!--JDNI-->
+    <resource-ref>
+        <description>DB Connection</description>
+        <res-ref-name>jdbc/UserPlatformDB</res-ref-name>
+        <res-type>javax.sql.DataSource</res-type>
+        <res-auth>Container</res-auth>
+    </resource-ref>
 </web-app>
