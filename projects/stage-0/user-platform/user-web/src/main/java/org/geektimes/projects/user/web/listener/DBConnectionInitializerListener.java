@@ -42,7 +42,7 @@ public class DBConnectionInitializerListener implements ServletContextListener {
             Context envCtx = (Context) initCtx.lookup("java:comp/env");
             // Look up our data source
             DataSource ds = (DataSource) envCtx.lookup("jdbc/UserPlatformDB");
-            Connection connection =  ds.getConnection("","");
+            Connection connection =  ds.getConnection();
             DBConnectionManager dbConnectionManager = new DBConnectionManager();
             dbConnectionManager.setConnection(connection);
             context.setAttribute("dbConnectionManager",dbConnectionManager);

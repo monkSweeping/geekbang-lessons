@@ -25,7 +25,7 @@ public class RegisterController implements PageController {
     @POST
     public String execute(HttpServletRequest request, HttpServletResponse response) throws Throwable {
         DBConnectionManager dbConnectionManager = (DBConnectionManager) request.getServletContext().getAttribute("dbConnectionManager");
-       Connection connection =  dbConnectionManager.getConnection();
+        Connection connection =  dbConnectionManager.getConnection();
         Statement statement = connection.createStatement();
         String sql=  " INSERT INTO users(name,password,email,phoneNumber) VALUES ";
         BeanInfo userBeanInfo = Introspector.getBeanInfo(User.class, Object.class);
